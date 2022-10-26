@@ -4,16 +4,22 @@ public class TestClass {
 
 	public static void main(String[] args) {
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertFirst(4);
-		list.insertFirst(7);
-		list.insertFirst(9);
-		list.insertFirst(72);
-		list.insertFirst(5);
+		list.insertLast(7);
+		list.insertLast(3);
+		list.insertLast(10);
+		list.insertFirst(0);
+		list.insertFirst(13);
+		list.insertFirst(92);
+		list.insertFirst(32);
+		list.insertFirst(12);
+		list.insertFirst(102);
+		list.insertFirst(10);
 		list.printList();
-		
-		list.deleteFirst();
+		System.out.println(list.head.data + " " + list.tail.data);
+
+		list.bubbleSort();
 		list.printList();
-		System.out.println(list.smallest());
+		System.out.println(list.head.data + " " + list.tail.data);
 		
 		
 		

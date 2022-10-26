@@ -40,7 +40,7 @@ public class Polynom {
 					}
 					
 					else if ( (pointer.degree > new_term.degree) && (pointer.next.degree < new_term.degree) ) {
-															 //if the new degree does not exist in the list
+															 //if the new degree does not already exist in the list
 						Term temp = pointer.next;
 						pointer.next = new_term;
 						new_term.next = temp;
