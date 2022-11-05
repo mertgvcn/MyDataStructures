@@ -2,18 +2,18 @@ package MyStackWithArray;
 
 public class TestClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		MyStackWithArray stack = new MyStackWithArray(5);
 
 		stack.push(3);
 		stack.push(5);
 		stack.push(6);
-		stack.push(5);
+		stack.push(7);
 		stack.push(3);
 		
 		System.out.println(printStack(stack));
-		deleteMiddle(stack);
-		System.out.println(printStack(stack));
+		System.out.println(isPalindrome(stack));
+
 
 	}
 
@@ -44,9 +44,9 @@ public class TestClass {
 		return msg.toString();
 	}
 
-	public static boolean isPalindrome(MyStackWithArray stack) {
+	public static boolean isPalindrome(MyStackWithArray stack) throws CloneNotSupportedException {
 		MyStackWithArray reverseStack = new MyStackWithArray(stack.getSize());
-		MyStackWithArray tempStack = stack;
+		MyStackWithArray tempStack = (MyStackWithArray) stack.copy();  //direkt tempStack = stack yapsaydýk;
 		int poppedValue;
 
 		if (stack.isEmpty()) {
@@ -54,9 +54,9 @@ public class TestClass {
 		} else {
 
 			while(!tempStack.isEmpty()) {
-				poppedValue = tempStack.pop();  //normal stack'ten de poplanýyor, hata burda?
-				reverseStack.push(poppedValue);
-			}
+				poppedValue = tempStack.pop();  //bu satýrda normal stack'ten de poplardý çünkü ayný
+				reverseStack.push(poppedValue); //objeyi referans gösteriyolar. Klonlayarak stack objesinin
+			}							  //ayný özelliklerini gösteren yeni bir obje yarattýk ve tempStacke eþitledik.
 
 		}
 		

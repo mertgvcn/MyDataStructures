@@ -1,6 +1,6 @@
 package MyStackWithArray;
 
-public class MyStackWithArray {
+public class MyStackWithArray implements Cloneable{
 	private int[] myStack;
 	private int size;
 	public int top;
@@ -44,6 +44,10 @@ public class MyStackWithArray {
 
 	public boolean isFull() {
 		return (top == (size - 1));
+	}
+	
+	public Object copy() throws CloneNotSupportedException { //geçici stackler oluþturacaðýmýz zaman iþe yarayabilir.
+		return this.clone();								 //this'in özelliklerine sahip yeni bir obje oluþturur.
 	}
 	
 	//GETTER SETTER
