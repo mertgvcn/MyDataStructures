@@ -7,7 +7,6 @@ public class TestClass {
 		list.insertLast(7);
 		list.insertLast(3);
 		list.insertLast(10);
-		list.insertFirst(0);
 		list.insertFirst(13);
 		list.insertFirst(92);
 		list.insertFirst(32);
@@ -15,11 +14,8 @@ public class TestClass {
 		list.insertFirst(102);
 		list.insertFirst(10);
 		list.printList();
-		System.out.println(list.head.data + " " + list.tail.data);
-
-		list.bubbleSort();
-		list.printList();
-		System.out.println(list.head.data + " " + list.tail.data);
+		
+		System.out.println(list.smallest().data);
 		
 		
 		

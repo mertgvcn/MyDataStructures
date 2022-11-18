@@ -11,17 +11,7 @@ public class Test {
 		poly.insert(9, 9);
 		poly.insert(1, 6);
 		poly.print();
-		
 
-		
-		Polynom poly2 = new Polynom();
-		poly2.insert(4, 4);
-		poly2.insert(11, 2);
-		poly2.insert(5, 3);
-		poly2.insert(9, 8);
-		poly2.print();
-		
-		poly.copyPaste(0, 2, poly2).print();
 
 	}
 

@@ -203,17 +203,15 @@ public class SingleLinkedList {
 	}
 
 	// OTHER FUNCTIONS
-	public Node search(int number) {
+	public Node search(int data) {
 		Node pointer = head;
-		int counter = 0;
 
 		while (pointer != null) {
-			if (number == pointer.data) {
+			if (data == pointer.data) {
 				return pointer;
 			}
-
+			
 			pointer = pointer.next;
-			counter++;
 		}
 		
 		return null;
@@ -256,24 +254,24 @@ public class SingleLinkedList {
 		}
 	}
 
-	public int smallest() {
-		int min = 0;
+	public Node smallest() {
+		Node minNode = head;
 
 		if (length() == 0) {
 			System.out.println("list is empty");
 		} else {
 			Node pointer = head;
-			min = head.data;
-
-			while (pointer != null) {
-				if (min > pointer.data) {
-					min = pointer.data;
+			
+			while(pointer != null) {
+				if(minNode.data > pointer.data) {
+					minNode = pointer;
 				}
+				
 				pointer = pointer.next;
 			}
 		}
 
-		return min;
+		return minNode;
 	}
 	
 	public void switchWithNextNode(int data) {
@@ -305,7 +303,7 @@ public class SingleLinkedList {
 			}else if(secondNode == tail) {	//we need previous here	
 				
 				Node previousNode = head; //to complete bounds correctly, we need previous of firstNode for some cases.
-				while(previousNode.next != firstNode) {
+				while(previousNode.next != firstNode) { //sondan bir önceki olana kadar
 					previousNode = previousNode.next;
 				}	
 				
@@ -351,6 +349,7 @@ public class SingleLinkedList {
 				first = first.next;
 				second = second.next;
 			}
+			
 		}
 		
 		

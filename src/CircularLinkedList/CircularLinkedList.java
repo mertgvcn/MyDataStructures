@@ -67,10 +67,4 @@ public class CircularLinkedList {
 		System.out.println();
 	}
 
-	public boolean isLapComplete() {
-		boolean key = true;
-
-		return true;
-	}
-
 }

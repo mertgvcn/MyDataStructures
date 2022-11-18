@@ -22,12 +22,17 @@ public class MyQueueWithLL<Type> {
 		}
 	}
 	
-	public void dequeue() { //when we remove a person from queue, we should remove from front of queue(deleteFirst)
+	public Node dequeue() { //when we remove a person from queue, we should remove from front of queue(deleteFirst)
+		Node oldFirst = null;
+		
 		if(isEmpty()) {
 			System.out.println("List is empty");
 		}else {
+			oldFirst = first;
 			first = first.next;
 		}
+		
+		return oldFirst;
 	}
 	
 	//SUPPORT

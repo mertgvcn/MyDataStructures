@@ -105,7 +105,7 @@ public class Polynom {
 		
 		Term i = p1.first; //we will iterate all terms of each polynoms. 
 		Term j = p2.first; 
-		Term k = null; //if polynom's lenght does not equal each other, we need this "k" to complete the rest terms.
+		Term k = null; //if polynom's length does not equal each other, we need this "k" to complete the rest terms.
 		
 		while(i != null && j != null) {	
 			
