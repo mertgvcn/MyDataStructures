@@ -1,4 +1,4 @@
-package SingleLinkedList;
+package LinkedList_Single;
 
 public class SingleLinkedList {
 	public Node head;
@@ -234,6 +234,32 @@ public class SingleLinkedList {
 		System.out.println("List[" + index + "] = " + pointer.data);
 	}
 
+	public void ReverseTheList() {
+		Node pointer = head;
+		Node newHead = tail;
+		boolean isCompleted = false;
+		
+		while(!isCompleted) {
+			
+			while(pointer.next != tail) {
+				pointer = pointer.next;	
+			}
+			
+			tail.next = pointer;
+			tail = pointer;
+			pointer = head;
+			
+			if(head == tail) {
+				pointer.next = null;
+				head = newHead;
+				isCompleted = true;
+				
+			}
+			
+		}
+		
+	}
+	
 	public static SingleLinkedList merge(SingleLinkedList l1, SingleLinkedList l2) {
 		SingleLinkedList mergedList = null;
 

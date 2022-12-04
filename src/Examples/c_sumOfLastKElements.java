@@ -1,5 +1,5 @@
 package Examples;
-import SingleLinkedList.*;
+import LinkedList_Single.*;
 
 public class c_sumOfLastKElements {
 

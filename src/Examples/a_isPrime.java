@@ -1,6 +1,6 @@
 package Examples;
 
-import SingleLinkedList.*;
+import LinkedList_Single.*;
 
 public class a_isPrime {
 

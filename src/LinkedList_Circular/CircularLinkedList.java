@@ -1,6 +1,6 @@
-package CircularLinkedList;
+package LinkedList_Circular;
 
-import DoublyLinkedList.Node;
+import LinkedList_Doubly.Node;
 
 public class CircularLinkedList {
 	public Node head;
