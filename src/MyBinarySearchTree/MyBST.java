@@ -45,8 +45,34 @@ public class MyBST {
 	
 	
 	//delete method
-	public Node delete() {
-		return null;
+	public Node delete(int data) {
+		return delete(root, data);
+	}
+	
+	private Node delete(Node focus, int data) {
+		if(focus == null) return null; //node is not in the tree
+		
+		if(data < focus.data) {
+			focus.left = delete(focus.left, data);
+		} else if(data > focus.data){
+			focus.right = delete(focus.right, data);
+		}else {
+			//case 1 : when deleted node is leaf
+			if(focus.left == null && focus.right == null) {
+				return null;
+			}
+			
+			//case 2 : when node has single child
+			if(focus.left == null) return focus.right;
+			if(focus.right == null) return focus.left;
+			
+			//case 3: when node has two children
+			int replaceData = getMin(focus.right).data;
+			focus.data = replaceData;
+			focus.right = delete(focus.right, focus.data);
+		}
+		
+		return focus;
 	}	
 	
 	//other methods
