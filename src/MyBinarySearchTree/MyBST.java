@@ -115,18 +115,35 @@ public class MyBST {
 	}
 
 	private int findCeil(Node focus, int input) {
-		if (focus == null)
-			return -1;
-		if (input == focus.data)
-			return focus.data;
-		if (input > focus.data)
-			return findCeil(focus.right.data);
+		if (focus == null)       return -1;
+		if (input == focus.data) return focus.data;
+		if (input > focus.data)  return findCeil(focus.right.data);
 
 		int ceil = findCeil(focus.left, input);
 		if (ceil >= input)
 			return ceil;
 		else
 			return focus.data;
+	}
+	
+	public int findFloor(int input) {
+		return findFloor(root, input);
+	}
+	
+	private int findFloor(Node focus, int input) {
+		if(focus == null)       return -1;
+		if(input == focus.data) return focus.data;
+		
+		if(input < focus.data) {
+			return findFloor(focus.left, input);
+		}else {
+			int floor = findFloor(focus.right, input);
+			if(floor >= focus.data) {
+				return floor;
+			}else {
+				return focus.data;
+			}
+		}
 	}
 
 	// supportive methods
